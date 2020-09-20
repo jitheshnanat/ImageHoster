@@ -1,0 +1,36 @@
+package ImageHoster.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+
+import javax.persistence.EntityManagerFactory;
+import javax.sql.DataSource;
+
+/**
+ * JPA Config class for setting the DB connection properties
+ **/
+
+@Configuration
+public class JpaConfig {
+
+    @Bean
+    public EntityManagerFactory entityManagerFactory() {
+        LocalContainerEntityManagerFactoryBean emfb = new LocalContainerEntityManagerFactoryBean();
+        emfb.setPersistenceXmlLocation("classpath:META-INF/persistence.xml");
+        emfb.afterPropertiesSet();
+        return emfb.getObject();
+    }
+
+    @Bean
+    public DataSource dataSource() {
+        DriverManagerDataSource ds = new DriverManagerDataSource();
+        ds.setDriverClassName("org.postgresql.Driver");
+        ds.setUrl("jdbc:postgresql://localhost:5433/imageHoster");
+        ds.setUsername("postgres");
+        ds.setPassword("jith@04985");
+        return ds;
+    }
+}
+

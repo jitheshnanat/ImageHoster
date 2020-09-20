@@ -123,7 +123,7 @@ public class ImageControllerTest {
     }
 
 
-    //This test checks the controller logic when the logged in submits the image to be uploaded in the application and checks whether the logic returns the html file 'images.html'
+    //This test checks the controller logic when the logged in submits the images to be uploaded in the application and checks whether the logic returns the html file 'images.html'
     @Test
     public void uploadImageWithPostRequest() throws Exception {
         User user = new User();

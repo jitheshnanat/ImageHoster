@@ -27,7 +27,7 @@ public class HomeControllerTest {
     @MockBean
     private ImageService imageService;
 
-    //This test checks the controller logic when the user sends the GET request to get all images in the application and checks whether the logic returns the html file 'index.html'
+    //This test checks the controller logic when the user sends the GET requests to get all images in the application and checks whether the logic returns the html file 'index.html'
     @Test
     public void getAllImages() throws Exception {
         this.mockMvc.perform(get("/"))

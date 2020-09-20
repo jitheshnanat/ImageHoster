@@ -147,7 +147,7 @@ public class UserControllerTest {
     }
 
 
-    //This test checks the controller logic for user signout where he sends the POST request to the server to invalidate the session and checks whether the logic returns the html file 'index.html'
+    //This test checks the controller logic for user sign out where user sends the POST request to the server to make the session invalid and checks whether the logic returns the html file 'index.html'
     @Test
     public void logout() throws Exception {
         User user = new User();
